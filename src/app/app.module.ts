@@ -53,6 +53,9 @@ import { EditableFieldComponent } from './views/editable-field/editable-field.co
 
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { TextFieldDirective } from './Directives/text-field.directive';
+import {PopoverArrowDirective} from './Directives/popover-arrow.directive';
+import {PopoverModule} from './popover-module';
+import { PopoverComponent } from './views/popover/popover.component'
 
 @NgModule({
   declarations: [
@@ -80,7 +83,8 @@ import { TextFieldDirective } from './Directives/text-field.directive';
     MatDialogModule,
     FormsModule,
     ReactiveFormsModule,
-    ScrollingModule 
+    ScrollingModule,
+    PopoverModule,
   ],
   providers: [
      {
@@ -112,7 +116,8 @@ import { TextFieldDirective } from './Directives/text-field.directive';
     TranslatePipe,
   ],
   
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ScanScreenComponent]
 })
 export class AppModule {
   public static Generation:any;

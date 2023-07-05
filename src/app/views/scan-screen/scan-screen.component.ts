@@ -243,38 +243,20 @@ export class ScanScreenComponent implements OnInit{
       this.modalService.openLargeModal(PrivacyPolicyComponent);
     }
 
-    openFileFormat(event: any){
-
-      console.log(event.clientX);
-      console.log(event.clientY);
-      //let event_position: DialogPosition = { left: event.clientX + 'px', top: event.clientY + 'px'};
-      let popupWidth =276;
-      let popupHeight=221;
-      this.midwidth=this.winWidth / 2;
-      let event_position: DialogPosition;
-      let leftPosition:number;
-      if (event.clientX < this.midwidth) {
-        event_position = { left: event.clientX + 'px', top: (event.clientY - 111) + 'px'};
-        console.log("x less than midwidth" )
-     
-       }
-       
-       else {
-         const availableSpaceOnRight = this.winWidth - event.clientX;
-         if (event.clientX >= this.winWidth - popupWidth) {
- 
-            leftPosition = event.clientX - (popupWidth - availableSpaceOnRight);
-           // Popup appears on the extreme right
-           //rotationClass = 'popup-rotate';
-         }
-          event_position= { left: leftPosition + 'px', top: (event.clientY - 111) + 'px'};
-       }
-      let direction:string ='rtl';
+    openFileFormat(event: Event):void {
+      console.log("Open File Format Function event"+event);
+      const target = event.target as HTMLElement;
+      console.log("Open File Format Function target element"+target);
       this.modalService.setData({
+        
         from : this.const_fileFormat
       });
-      this.modalService.openModal(FeaturePopoverComponent,event_position);
-      //modalRef.content.closeBtnName = 'Close';
+      console.log("Open File Format Function after modal service set data");
+      this.modalService.open(FeaturePopoverComponent,target).afterClosed()
+      .subscribe(result => {
+        console.log(`Closed with ${result}`);
+      });;
+      
     }
 
     openScan(event: any){

@@ -1,46 +1,67 @@
-.popover {
+:host{
 
-  .contents {
-      padding: 8px;
-      border-radius: 3px;
-      background-color: #dddddd;
-      box-shadow: 0px 3px 14px 0px rgba(11,46,86,.5);
-      overflow-x: hidden;
-  }
+  .popover {
 
-  .wrapper {
-      overflow: hidden;
-  }
+    .contents {
+        padding: 8px;
+        border-radius: 3px;
+        background-color: #dddddd;
+        box-shadow: 0px 3px 14px 0px rgba(11,46,86,.5);
+        overflow-x: hidden;
+    }
 
-  .btn {
-      width: 100% !important;
-      border-width: 1px 0 0 0;
+    .wrapper {
+        overflow: hidden;
+    }
 
-      .text-container {
-          width: initial !important;
-      }
-  }
+    .btn {
+        width: 100% !important;
+        border-width: 1px 0 0 0;
 
-  .popover-scroll-content {
-      max-height: 452px;
-      overflow-x: hidden;
-      border: 1px solid;
-      border-radius: 3px;
-  }
+        .text-container {
+            width: initial !important;
+        }
+    }
 
-  li:first-child .btn {
-      border-top-width: 0;
+    .popover-scroll-content {
+        max-height: 452px;
+        overflow-x: hidden;
+        border: 1px solid;
+        border-radius: 3px;
+    }
+
+    li:first-child .btn {
+        border-top-width: 0;
+    }
   }
 }
 
-arrow {
-  display: block;
-  position: fixed;
-  overflow: hidden;
+.arrow {
+  position: absolute;
+  background: inherit;
+  z-index: -1;
 }
 
-arrow * {
-  background-color: #dddddd;
-  z-index: 1;
-  float: right;
+:host-context(.center) .arrow {
+  left: 50%;
+}
+
+:host-context(.top.left, .top.center) .arrow {
+  transform-origin: top left;
+  transform: rotate(45deg);
+}
+
+:host-context(.top.right) .arrow {
+  transform-origin: top right;
+  transform: rotate(-45deg);
+}
+
+:host-context(.bottom.left, .bottom.center) .arrow {
+  transform-origin: bottom left;
+  transform: rotate(-45deg);
+}
+
+:host-context(.bottom.right) .arrow {
+  transform-origin: bottom right;
+  transform: rotate(45deg);
 }
