@@ -151,10 +151,14 @@ export class ModalService {
   }
 
   open<D = any>(componentOrTemplate: ComponentType<any> | TemplateRef<any>,
-    target: ElementRef | HTMLElement,
+    target: ElementRef<HTMLElement> | HTMLElement,
     config: Partial<PopoverConfig> = {}): PopoverRef<D> {
   const popoverConfig: PopoverConfig = Object.assign({}, defaultConfig, config);
-  console.log("Open  Function modal service "+target +":" + config);
+  console.log("Open  Function modal service "+target );
+  const element = this.extractHTMLElement(target);
+  console.log("Open Function target element:", element);
+  console.log("Button ID:", element.id);
+  console.log("Button Inner Text:", element.innerText);
   const arrowSize = popoverConfig.arrowSize;
   const arrowOffset = popoverConfig.arrowOffset;
   const panelOffset = arrowSize / 2;
@@ -279,6 +283,14 @@ export class ModalService {
   }
 
   return popoverRef;
+}
+
+private extractHTMLElement(element: ElementRef<HTMLElement> | HTMLElement): HTMLElement {
+  if (element instanceof ElementRef) {
+    return element.nativeElement;
+  } else {
+    return element;
+  }
 }
 }
 
