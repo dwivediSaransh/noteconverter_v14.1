@@ -30,3 +30,59 @@ scan-screen {
         }
     }
 }
+
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    red !important;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    red !important;
+   opacity:  1;
+}
+
+::-ms-placeholder{ /* Most modern browsers support this now. */
+   color:    red !important;
+}
+::-ms-placeholder
+{ /* Most modern browsers support this now. */
+    color:    red !important;
+ }
+input:focus::placeholder{
+    color: red !important;   
+ }
+//  .form-control {
+//     background-color: gray !important;
+// }
+input::placeholder {
+    overflow: visible;
+ }
+ input::-webkit-input-placeholder {
+    color: red;
+}
+input:focus::-webkit-input-placeholder {
+    color: red;
+}
+
+/* Firefox < 19 */
+input:-moz-placeholder {
+    color: red;
+}
+input:focus:-moz-placeholder {
+    color: red;
+}
+
+/* Firefox > 19 */
+input::-moz-placeholder {
+    color: red;
+}
+input:focus::-moz-placeholder {
+    color: red;
+}
+
+/* Internet Explorer 10 */
+input:-ms-input-placeholder {
+    color: red;
+}
+input:focus:-ms-input-placeholder {
+    color: red;
+}
