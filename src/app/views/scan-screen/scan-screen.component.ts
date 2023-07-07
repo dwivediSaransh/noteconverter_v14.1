@@ -92,7 +92,6 @@ export class ScanScreenComponent implements OnInit{
   isEmailRequired : boolean =false;
 
   commonRightMarginForPopup: string = '57px';
-  showEmailPlaceHolder: boolean = true;
 
   constructor(
     private dialog: MatDialog,
@@ -209,7 +208,6 @@ export class ScanScreenComponent implements OnInit{
 
     emailFormatValidator(control: AbstractControl): ValidationErrors | null { 
       const email: string = control.value; 
-      this.showEmailPlaceHolder = control.value.length == 0 ? true : false;  
       const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; 
       if (email && !emailRegex.test(email)) { 
         return { invalidEmailFormat: true }; 
