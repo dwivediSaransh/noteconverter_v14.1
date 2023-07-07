@@ -91,6 +91,10 @@ export class ScanScreenComponent implements OnInit{
   isEmailInvalid : boolean = false;
   isEmailRequired : boolean =false;
 
+  private startY: number; 
+  private startScrollTop: number; 
+  private isScrolling: boolean;
+
   constructor(
     private dialog: MatDialog,
     private formBuilder: FormBuilder,
@@ -459,5 +463,36 @@ onEmailBlur(){
   this.isEmailRequired = emailControl.hasError('required') && emailControl.touched;
   this.isEmailInvalid = emailControl.hasError('email') && emailControl.touched;
 }
+
+
+
+//////////// touch events
+
+onTouchStart(event: MouseEvent | TouchEvent) 
+{ 
+  event.preventDefault(); //alert("touch start");
+  this.startY = this.getTouchY(event); 
+  this.startScrollTop = this.elementRef.nativeElement.scrollTop; 
+  this.isScrolling = true; 
+} 
+onTouchMove(event: MouseEvent | TouchEvent) { 
+  event.preventDefault(); //alert("touch move");
+  if (!this.isScrolling) return; 
+  const touchY = this.getTouchY(event); 
+  const scrollDelta = this.startY - touchY; 
+  this.elementRef.nativeElement.scrollTop = this.startScrollTop + scrollDelta; 
+} 
+onTouchEnd() { 
+  //alert("touch end");
+  this.isScrolling = false; 
+} 
+
+private getTouchY(event: MouseEvent | TouchEvent): number { 
+  if (event instanceof TouchEvent) { 
+    return event.touches[0].clientY;
+  } else { 
+    return event.clientY; 
+  } 
+} 
     
 }

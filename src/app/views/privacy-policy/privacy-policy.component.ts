@@ -1,4 +1,4 @@
-import { Component,OnInit } from '@angular/core';
+import { Component,OnInit,ElementRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MatDialogRef } from '@angular/material/dialog';
 import { ModalService} from '../../services/modal.service';
@@ -21,6 +21,10 @@ export class PrivacyPolicyComponent implements OnInit {
   showVersion: string = '';
   env = environment;
   resourceString : resourceString[];
+  private startY: number; 
+  private startScrollTop: number; 
+  private isScrolling: boolean;
+  testELement = document.getElementsByClassName('popup-content'); 
   //declare smoothscroll : any;
 
   constructor(
@@ -29,9 +33,11 @@ export class PrivacyPolicyComponent implements OnInit {
     public modalRef : MatDialogRef<any>,
     private resourceStringService : ResourcestringService,
     private  logService: LogService,
+    private elementRef: ElementRef,
     ){}
 
   ngOnInit(): void {
+    //alert(this.testELement[0].classList.toggle("responsive"));
     //debugger;
     const progress =  this.modalService.openModalWithoutClose(ProgressAlertComponent,'','') //this.modalService.showProgressAlert('Alert','');
     const url = this.env.privacyPolicyUrl;
@@ -75,6 +81,35 @@ export class PrivacyPolicyComponent implements OnInit {
       this.renderer.setStyle(link,'pointer-events','none');
     });
   } */
+
+  //////////// touch events
+
+onTouchStart(event: MouseEvent | TouchEvent) 
+{ 
+  event.preventDefault(); //alert("touch start");
+  this.startY = this.getTouchY(event); 
+  this.startScrollTop = this.testELement[0].scrollTop; alert(this.testELement[0].innerHTML);
+  this.isScrolling = true; 
+} 
+onTouchMove(event: MouseEvent | TouchEvent) { 
+  event.preventDefault(); 
+  if (!this.isScrolling) return; 
+  const touchY = this.getTouchY(event); 
+  const scrollDelta = 50;//this.startY - touchY; //alert(scrollDelta);
+  this.testELement[0].scrollTop = this.startScrollTop + scrollDelta; 
+} 
+onTouchEnd() { 
+  //alert("touch end");
+  this.isScrolling = false; 
+} 
+
+private getTouchY(event: MouseEvent | TouchEvent): number { 
+  if (event instanceof TouchEvent) { 
+    return event.touches[0].clientY;
+  } else { 
+    return event.clientY; 
+  } 
+} 
 }
   
 

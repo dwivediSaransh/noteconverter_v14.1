@@ -25,7 +25,17 @@
 
     <!-- <cdk-virtual-scroll-viewport itemSize="50" class="scroll-container" autosize> -->
 
-    <div class ="scroll-container" style="position:relative;overflow:hidden" ngScrollable='{"autoHeight": true, "watchHeight": true}'>
+    <div class ="scroll-container" 
+    (mousedown)="onTouchStart($event)" 
+    (mousemove)="onTouchMove($event)" 
+    (mouseup)="onTouchEnd()" 
+    (touchstart)="onTouchStart($event)" 
+    (touchmove)="onTouchMove($event)" 
+    (touchend)="onTouchEnd()" 
+    
+    style="position:relative;overflow:hidden" 
+    ngScrollable='{"autoHeight": true, "watchHeight": true}'
+    >
       
       <div class="grid-container" >
         
