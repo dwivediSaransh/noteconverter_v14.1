@@ -38,9 +38,9 @@
                 tabindex="-1"/> -->
                 <appTextField [initialValue]=""  type="email" class="ad-themed">
                   <input id="Aakash_ID" class="form-control textField text-medium login " formControlName="email" 
-                  placeholder="aaaaaaaaa" tabindex="-1"  />
+                  placeholder="aaaaaaaaa" tabindex="-1"  [ngClass]="{'keepPlaceHolder': this.showEmailPlaceHolder == true}" />
                 </appTextField>
-                <input id="Aakash_ID_New" class="keepPlaceHolder" placeholder="aaaaaaaaa" />
+                <input id="Aakash_ID_New" class="" placeholder="aaaaaaaaa" [ngClass]="{'keepPlaceHolder': this.showEmailPlaceHolder == true}" />
               </div>
             </div>
             <div class="grid-row themed" [class.grid-row-no-error]="f['email'].hasError('required') && !f['email'].touched" >
