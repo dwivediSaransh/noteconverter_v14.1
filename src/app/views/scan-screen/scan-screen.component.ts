@@ -202,12 +202,6 @@ export class ScanScreenComponent implements OnInit{
       //{ validators: this.emailMatchValidator },
      );
 
-    //  if (email.length > 0) {
-    //   this.showEmailPlaceHolder = false;
-    // } else {
-    //   this.showEmailPlaceHolder = true;
-    // }
-
      if(AppModule.email !== ''){
       this.noteConvertorForm.controls["email"].setValue(AppModule.email.toString());
      }
@@ -215,10 +209,19 @@ export class ScanScreenComponent implements OnInit{
 
     emailFormatValidator(control: AbstractControl): ValidationErrors | null { 
       const email: string = control.value; 
+      // this.handleEmailPlaceholder(email);
       const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; 
       if (email && !emailRegex.test(email)) { 
         return { invalidEmailFormat: true }; 
       } return null; 
+    }
+
+    handleEmailPlaceholder(email: string){
+      if (email.length > 0) {
+        this.showEmailPlaceHolder = false;
+      } else {
+        this.showEmailPlaceHolder = true;
+      }
     }
     //  emailMatchValidator(form: FormGroup) {
     //   const email = form.get('email').value;
