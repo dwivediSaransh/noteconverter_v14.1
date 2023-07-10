@@ -90,7 +90,7 @@ export class ScanScreenComponent implements OnInit{
 
   isEmailInvalid : boolean = false;
   isEmailRequired : boolean =false;
-  showEmailPlaceHolder : boolean = false;
+  showEmailPlaceHolder : boolean = true;
 
   commonRightMarginForPopup: string = '57px';
 
@@ -210,6 +210,7 @@ export class ScanScreenComponent implements OnInit{
     emailFormatValidator(control: AbstractControl): ValidationErrors | null { 
       const email: string = control.value; 
       // this.handleEmailPlaceholder(email);
+      // this.showEmailPlaceHolder = (email.length > 0) ? true : false;
       const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; 
       if (email && !emailRegex.test(email)) { 
         return { invalidEmailFormat: true }; 
