@@ -38,11 +38,11 @@
                 tabindex="-1"/> -->
                 <appTextField [initialValue]=""  type="email" class="ad-themed" xas-placeholder="test" >
                   <input id="Aakash_ID" class="form-control textField text-medium login" formControlName="email" 
-                  placeholder="Aakash" tabindex="-1" xas-placeholder="test" [ngClass]="{'keepPlaceHolder': this.showEmailPlaceHolder}"  />
+                  placeholder="Aakash" tabindex="-1" xas-placeholder="test" [ngClass]="{'keepPlaceHolder': this.showEmailPlaceHolder == true}"  />
                 </appTextField>
                 <appTextField [initialValue]=""  type="email" class="ad-themed" xas-placeholder="test" >
                   <input id="Aakash_ID" class="form-control textField text-medium login" formControlName="email" 
-                  placeholder="{{this.emailPlaceHolder}} " tabindex="-1" xas-placeholder="test" [ngClass]="{'keepPlaceHolder': this.showEmailPlaceHolder}" />
+                  placeholder="{{this.emailPlaceHolder}} " tabindex="-1" xas-placeholder="test" [ngClass]="{'keepPlaceHolder': this.showEmailPlaceHolder == true}" />
                 </appTextField>
 
               </div>
