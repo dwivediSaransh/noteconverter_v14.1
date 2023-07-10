@@ -90,7 +90,7 @@ export class ScanScreenComponent implements OnInit{
 
   isEmailInvalid : boolean = false;
   isEmailRequired : boolean =false;
-  showEmailPlaceHolder : boolean = true;
+  showEmailPlaceHolder : boolean = false;
 
   commonRightMarginForPopup: string = '57px';
 
