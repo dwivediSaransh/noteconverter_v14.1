@@ -36,14 +36,15 @@
                 <!-- <input appTextField initialValue="" class="form-control textField text-medium login"  readOnlyClass="ad-themed" 
                 editableClass = "form-control textField text-medium login" formControlName="email" placeholder="{{this.emailPlaceHolder}}" 
                 tabindex="-1"/> -->
-                <appTextField [initialValue]=""  type="email" class="ad-themed keepPlaceHolder" xas-placeholder="test" >
-                  <input class="form-control textField text-medium login keepPlaceHolder" formControlName="email" 
-                  placeholder="{{this.emailPlaceHolder}} " tabindex="-1" xas-placeholder="test" [ngClass]="{'keepPlaceHolder': this.showEmailPlaceHolder}" />
-                </appTextField>
                 <appTextField [initialValue]=""  type="email" class="ad-themed" xas-placeholder="test" >
                   <input id="Aakash_ID" class="form-control textField text-medium login" formControlName="email" 
                   placeholder="Aakash" tabindex="-1" xas-placeholder="test" [ngClass]="{'keepPlaceHolder': this.showEmailPlaceHolder}"  />
                 </appTextField>
+                <appTextField [initialValue]=""  type="email" class="ad-themed keepPlaceHolder" xas-placeholder="test" >
+                  <input id="Aakash_ID" class="form-control textField text-medium login keepPlaceHolder" formControlName="email" 
+                  placeholder="{{this.emailPlaceHolder}} " tabindex="-1" xas-placeholder="test" [ngClass]="{'keepPlaceHolder': this.showEmailPlaceHolder}" />
+                </appTextField>
+
               </div>
             </div>
             <div class="grid-row themed" [class.grid-row-no-error]="f['email'].hasError('required') && !f['email'].touched" >
