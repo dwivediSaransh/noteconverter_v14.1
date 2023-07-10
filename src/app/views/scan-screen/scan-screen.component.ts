@@ -209,6 +209,11 @@ export class ScanScreenComponent implements OnInit{
 
     emailFormatValidator(control: AbstractControl): ValidationErrors | null { 
       const email: string = control.value; 
+      if (email.length > 0) {
+        this.showEmailPlaceHolder = false;
+      } else {
+        this.showEmailPlaceHolder = true;
+      }
       const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; 
       if (email && !emailRegex.test(email)) { 
         return { invalidEmailFormat: true }; 
