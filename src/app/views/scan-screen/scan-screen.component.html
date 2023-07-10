@@ -44,7 +44,8 @@
                 </appTextField>
                 <appTextField [initialValue]=""  type="email" class="ad-themed" >
                   <input id="Aakash_ID" class="form-control textField text-medium login" formControlName="email" 
-                  placeholder="{{this.emailPlaceHolder}} " tabindex="-1" xas-placeholder="test" [class.keepPlaceHolder]="this.showEmailPlaceHolder" />
+                  placeholder="{{this.emailPlaceHolder}} " tabindex="-1" xas-placeholder="test" [class.keepPlaceHolder]="this.showEmailPlaceHolder" 
+                  (input)="this.handleEmailPlaceholder($event)" />
                 </appTextField>
               </div>
             </div>
