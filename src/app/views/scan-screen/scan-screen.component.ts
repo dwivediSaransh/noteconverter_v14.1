@@ -216,7 +216,7 @@ export class ScanScreenComponent implements OnInit{
       } return null; 
     }
 
-    handleEmailPlaceholder(email: string){
+    handleEmailPlaceholder(email: string): void{
       if (email.length > 0) {
         this.showEmailPlaceHolder = false;
       } else {
