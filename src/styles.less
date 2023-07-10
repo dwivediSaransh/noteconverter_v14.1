@@ -35,6 +35,21 @@
     color: blue;
     font-size: 28px;
   }
+  /* Firefox < 19 */
+  #Email_Input:-moz-placeholder {
+    font-size: 28px;
+  }
+  #Email_Input:focus:-moz-placeholder {
+    font-size: 28px;
+  }
+
+  /* Firefox > 19 */
+  #Email_Input::-moz-placeholder {
+    font-size: 28px;
+  }
+  #Email_Input:focus::-moz-placeholder {
+    font-size: 28px;
+  }
 }
 
 // .ad-themed ::placeholder {
