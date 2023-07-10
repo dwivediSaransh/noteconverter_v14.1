@@ -217,11 +217,14 @@ export class ScanScreenComponent implements OnInit{
       } return null; 
     }
 
-    handleEmailPlaceholder(email: string): void{
-      if (email.length > 0) {
+    handleEmailPlaceholder(event: any): void{
+      console.log(this.noteConvertorForm.value.email);
+      if (this.noteConvertorForm.value.email.length > 0) {
         this.showEmailPlaceHolder = false;
+        console.log('if');
       } else {
         this.showEmailPlaceHolder = true;
+        console.log('else');
       }
     }
     //  emailMatchValidator(form: FormGroup) {

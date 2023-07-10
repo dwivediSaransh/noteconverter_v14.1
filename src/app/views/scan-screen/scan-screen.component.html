@@ -36,16 +36,16 @@
                 <!-- <input appTextField initialValue="" class="form-control textField text-medium login"  readOnlyClass="ad-themed" 
                 editableClass = "form-control textField text-medium login" formControlName="email" placeholder="{{this.emailPlaceHolder}}" 
                 tabindex="-1"/> -->
-                <appTextField [initialValue]=""  type="email" class="ad-themed" xas-placeholder="test" >
+                <appTextField [initialValue]=""  type="email" class="ad-themed" >
                   <input id="Aakash_ID" class="form-control textField text-medium login" formControlName="email" 
-                  placeholder="Aakash" tabindex="-1" xas-placeholder="test" [class.keepPlaceHolder]="noteConvertorForm && noteConvertorForm.controls['email'].value.length > 0" 
-                   />
+                  placeholder="Aakash" tabindex="-1" xas-placeholder="test" [class.keepPlaceHolder]="this.showEmailPlaceHolder" 
+                  key="" (input)="this.handleEmailPlaceholder($event)"
+                  />
                 </appTextField>
-                <appTextField [initialValue]=""  type="email" class="ad-themed" xas-placeholder="test" >
+                <appTextField [initialValue]=""  type="email" class="ad-themed" >
                   <input id="Aakash_ID" class="form-control textField text-medium login" formControlName="email" 
                   placeholder="{{this.emailPlaceHolder}} " tabindex="-1" xas-placeholder="test" [class.keepPlaceHolder]="this.showEmailPlaceHolder" />
                 </appTextField>
-
               </div>
             </div>
             <div class="grid-row themed" [class.grid-row-no-error]="f['email'].hasError('required') && !f['email'].touched" >
