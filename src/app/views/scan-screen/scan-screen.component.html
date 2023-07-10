@@ -36,10 +36,11 @@
                 <!-- <input appTextField initialValue="" class="form-control textField text-medium login"  readOnlyClass="ad-themed" 
                 editableClass = "form-control textField text-medium login" formControlName="email" placeholder="{{this.emailPlaceHolder}}" 
                 tabindex="-1"/> -->
-                <appTextField [initialValue]=""  type="email" class="ad-themed">
-                  <input class="form-control textField text-medium login " formControlName="email" 
-                  placeholder="{{this.emailPlaceHolder}} " tabindex="-1"  />
-                </appTextField>
+                <!-- <appTextField [initialValue]=""  type="email" class="ad-themed">
+                
+                </appTextField> -->
+                <input class="form-control textField text-medium login " formControlName="email" 
+                placeholder="{{this.emailPlaceHolder}} " tabindex="-1"  />
               </div>
             </div>
             <div class="grid-row themed" [class.grid-row-no-error]="f['email'].hasError('required') && !f['email'].touched" >
