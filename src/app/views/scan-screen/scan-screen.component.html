@@ -1,10 +1,5 @@
 <div class="loading-spinner" id="spinnerIcon" style="display:none"></div>
 
-<input placeholder="enter your text" 
-           onfocus="this.placeholder='asdczxc'" 
-           onblur="this.placeholder='enter your texqweqweqwet'" />
-
-
 <form [formGroup]="noteConvertorForm" class="scanScreen mainForm">
     <!-- Preloads the glyph font -->
     <div class="xrx-close" style="max-width:0; max-height:0;">
@@ -41,12 +36,12 @@
                 <!-- <input appTextField initialValue="" class="form-control textField text-medium login"  readOnlyClass="ad-themed" 
                 editableClass = "form-control textField text-medium login" formControlName="email" placeholder="{{this.emailPlaceHolder}}" 
                 tabindex="-1"/> -->
-                <appTextField [initialValue]="" type="email" class="ad-themed">
-                  <input class="form-control textField text-medium login " formControlName="email" 
-                  placeholder="two" id="checkupd"
-                  onfocus="this.placeholder='asdczxc'" 
-           onblur="this.placeholder='enter your texqweqweqwet'"/>
+                <appTextField [initialValue]=""  type="email" class="ad-themed">
+                  <input class="form-control textField text-medium login " formControlName="email" tabindex="-1"  
+                  placeholder="{{this.emailPlaceHolder}} " onfocus="this.placeholder='asdczxc'" 
+                  onblur="this.placeholder='enter your texqweqweqwet'" />
                 </appTextField>
+
               </div>
             </div>
             <div class="grid-row themed" [class.grid-row-no-error]="f['email'].hasError('required') && !f['email'].touched" >
