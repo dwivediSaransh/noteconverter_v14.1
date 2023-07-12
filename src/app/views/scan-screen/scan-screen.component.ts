@@ -46,7 +46,6 @@ export class ScanScreenComponent implements OnInit{
   }
   @ViewChild('button') button: ElementRef;
   @ViewChild('inputField') inputField: ElementRef;
-  @ViewChild('inputEmailField') inputEmailField: ElementRef;
   showPrivacySetting=false;
   noteConvertorForm:  FormGroup;
 
@@ -233,7 +232,6 @@ export class ScanScreenComponent implements OnInit{
         fileName : ''
       }); 
       this.fileName = this.resFilename;
-      this.inputEmailField.nativeElement.value = this.emailPlaceHolder;
       this.inputField.nativeElement.value = this.resFilename;//console.log(this.inputField.nativeElement.value);
       this.button.nativeElement.innerHTML = '<span id="_glyph" class="xrx-paperclip" style="line-height: 100%;"></span>&nbsp&nbsp' + this.formatfilename(this.resFilename,this.fileextension,this.resfilenametemp);
       this.scanOptionService.isPlaceholderVisible = true;
