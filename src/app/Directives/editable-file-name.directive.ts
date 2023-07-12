@@ -39,6 +39,7 @@ ngOnInit(){
   this.inputField = document.querySelector('input[type="text"]');
   if (this.inputField) {
     this.inputField.style.display = 'none';    
+    this.inputField.style.marginTop = '50px';    
     this.inputField.value = this.placeholder;  
   }
 
