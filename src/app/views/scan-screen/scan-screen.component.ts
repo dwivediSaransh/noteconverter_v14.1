@@ -196,7 +196,8 @@ export class ScanScreenComponent implements OnInit{
       this.noteConvertorForm = this.formBuilder.group({
         email:['',[Validators.required,this.emailFormatValidator]],//,Validators.email
         //confirmEmail:['',[Validators.required,Validators.email]],
-        fileName : ['']//this.fileName
+        fileName : [''],//this.fileName
+        testingField : ['']
       },
       //{ validators: this.emailMatchValidator },
      );
