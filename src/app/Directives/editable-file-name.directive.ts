@@ -39,8 +39,8 @@ ngOnInit(){
   this.inputField = document.querySelector('input[type="text"]');
   if (this.inputField) {
     this.inputField.style.display = 'none';    
-    this.inputField.style.marginTop = '10px';
-    this.inputField.style.width = '95%';
+    this.inputField.style.marginTop = '5px';
+    this.inputField.style.width = '96%';
     this.inputField.value = this.placeholder;  
   }
 
