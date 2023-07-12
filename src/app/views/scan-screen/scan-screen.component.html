@@ -1,5 +1,10 @@
 <div class="loading-spinner" id="spinnerIcon" style="display:none"></div>
 
+<input placeholder="enter your text" 
+           onfocus="this.placeholder='asdczxc'" 
+           onblur="this.placeholder='enter your texqweqweqwet'" />
+
+
 <form [formGroup]="noteConvertorForm" class="scanScreen mainForm">
     <!-- Preloads the glyph font -->
     <div class="xrx-close" style="max-width:0; max-height:0;">
@@ -37,10 +42,10 @@
                 editableClass = "form-control textField text-medium login" formControlName="email" placeholder="{{this.emailPlaceHolder}}" 
                 tabindex="-1"/> -->
                 <appTextField [initialValue]="" type="email" class="ad-themed">
-                  <input type="email" class="form-control textField text-medium login " formControlName="email" 
-                  placeholder="{{this.emailPlaceHolder}}" tabindex="-1" id="checkupd"
-                  onfocus="this.placeholder='please enter emailqwerty'"
-                  onblur="this.placeholder='please enter email'"/>
+                  <input class="form-control textField text-medium login " formControlName="email" 
+                  placeholder="one" id="checkupd"
+                  onfocus="this.placeholder='asdczxc'" 
+           onblur="this.placeholder='enter your texqweqweqwet'"/>
                 </appTextField>
               </div>
             </div>
