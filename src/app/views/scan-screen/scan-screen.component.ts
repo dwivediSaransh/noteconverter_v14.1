@@ -23,6 +23,7 @@ import { EditableFieldDirective } from  '../../Directives/editable-file-name.dir
 //import { ProgressAlertComponent} from '../../views/progress-alert/progress-alert.component';
 
 import { ResourcestringService} from '../../services/resourcestring.service';
+import { BasicAlertComponent } from '../basic-alert/basic-alert.component';
 
 
 
@@ -354,7 +355,9 @@ export class ScanScreenComponent implements OnInit{
 scan() {
   this.logger.trackTrace("ctrl.scan ...");
   //this.modalService.openModalWithTitle(ProgressAlertComponent,this.resourceString['SDE_SCANNING1'],'');
-  
+  const title = 'SDE_DOCUMENT_SUCCESSFULLY_SCANNED';
+  const msg = 'SDE_WILL_RECEIVE_EMAIL2';
+  this.modalService.openModalWithTitle(BasicAlertComponent,title,msg);
    this.mainDeviceconfig();
 };
 
