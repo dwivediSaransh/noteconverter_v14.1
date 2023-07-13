@@ -39,11 +39,13 @@ ngOnInit(){
   this.inputField = document.querySelector('input[type="text"]');
   if (this.inputField) {
     this.inputField.style.display = 'none';    
-    this.inputField.style.marginTop = '4px';
-    this.inputField.style.width = '95%';
+    this.inputField.style.marginTop = '3px';
+    this.inputField.style.width = '100%';
     this.inputField.style.marginBottom = '0px';
-    this.inputField.style.marginLeft = '0px';
     this.inputField.style.cssFloat = 'left';
+    this.inputField.style.height = '42px';
+    this.inputField.style.left = '0';
+    this.inputField.style.padding = '8px 8px 8px 20px';
     this.inputField.value = this.placeholder;  
   }
 
