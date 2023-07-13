@@ -43,6 +43,7 @@ ngOnInit(){
     this.inputField.style.width = '95%';
     this.inputField.style.marginBottom = '0px';
     this.inputField.style.marginLeft = '0px';
+    this.inputField.style.cssFloat = 'left';
     this.inputField.value = this.placeholder;  
   }
 

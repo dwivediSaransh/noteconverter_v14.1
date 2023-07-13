@@ -19,7 +19,7 @@ export class TextFieldDirective {
   @HostListener('click') onClick() { 
     this.editMode = true; 
     this.hostClasses =`${this.editableClass}`;
-    this.editableText = this.initialValue || 'test'; 
+    this.editableText = this.initialValue || ''; 
     const childNode = this.elementRef.nativeElement.firstElementChild as HTMLInputElement;
 
     childNode.focus(); 
