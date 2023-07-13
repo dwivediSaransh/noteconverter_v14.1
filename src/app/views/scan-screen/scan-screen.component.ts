@@ -355,9 +355,6 @@ export class ScanScreenComponent implements OnInit{
 scan() {
   this.logger.trackTrace("ctrl.scan ...");
   //this.modalService.openModalWithTitle(ProgressAlertComponent,this.resourceString['SDE_SCANNING1'],'');
-  const title = 'SDE_DOCUMENT_SUCCESSFULLY_SCANNED';
-  const msg = 'SDE_WILL_RECEIVE_EMAIL2';
-  this.modalService.openModalWithTitle(BasicAlertComponent,title,msg);
    this.mainDeviceconfig();
 };
 
