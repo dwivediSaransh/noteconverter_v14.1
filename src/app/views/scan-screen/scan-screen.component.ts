@@ -23,7 +23,6 @@ import { EditableFieldDirective } from  '../../Directives/editable-file-name.dir
 //import { ProgressAlertComponent} from '../../views/progress-alert/progress-alert.component';
 
 import { ResourcestringService} from '../../services/resourcestring.service';
-import { BasicAlertComponent } from '../basic-alert/basic-alert.component';
 
 
 
